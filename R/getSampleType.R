@@ -23,7 +23,7 @@ getSampleType = function(samples,kit=NULL,LUSsymbol="_") {
     type = "EPG"
   } 
   if(type=="EPG") {  #Special case if kit is given
-    colorinfo = euroformix::getKit(kit,"COLOR") #Extract color info of kit
+    colorinfo = getKit(kit,"COLOR") #Extract color info of kit
     if( length( unique(colorinfo[,2]) )==1 ) type = "MPS" #SET AS MPS IF ONLY 1 COLOR
   }
   return(type)

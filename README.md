@@ -10,16 +10,12 @@ into account.
 Installation for Windows: Open R (v4.2 or newer) and write
 
 ``` r
-install.packages('https://github.com/oyvble/euroformix/releases/download/v4.2.4/euroformix_4.2.4.zip',repos=NULL,type='win.binary')
+install.packages('https://github.com/oyvble/euroformix/releases/download/v4.2.5/euroformix_4.2.5.zip',repos=NULL,type='win.binary')
 install.packages(c('numDeriv','gWidgets2tcltk','cubature','XML','curl','plotly'))
 
 #Run EuroForMix (GUI)
 library(euroformix);efm() 
 ```
-
-Also possible to download zip file from
-<https://github.com/oyvble/euroformix/releases> (compiled for Windows
-only)
 
 Alternative installation directly from source through GitHub (requires
 R-tools):
@@ -29,8 +25,12 @@ install.packages("remotes")
 remotes::install_github("oyvble/euroformix")
 ```
 
+Also possible to download zip file from www.euroformix.com/versions
+(compiled for Windows only)
+
 Info about suggested R-packages (all are optional to install):  
-- gWidgets2tcltk: Used for R GUI  
+- numDeriv: Used for obtaining numerical derivatives - gWidgets2tcltk:
+Used for R GUI  
 - plotly: Used to vizualiaze DNA-profiles  
 - cubature: Used for numerical calculation of Bayes Factor  
 - XML/curl: Used to read allele frequencies from Strider population

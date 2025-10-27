@@ -1,5 +1,4 @@
 #library(euroformix)
-#source("C:/Users/oyvbl/Dropbox/Forensic/MixtureProj/myDev/euroformix/R/helpintegrals.R", echo=TRUE)
 
 calcMyInt = function(nC,nKnown=0) {
   

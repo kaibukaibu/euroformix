@@ -41,7 +41,7 @@ calcTippet = function(tipIdx, mlefitHp, mlefitHd, niter=100, type="MLE", LRobs=N
       
       #Otherwise continue calculating 
     } else if(type=="INT") {
-      lims = euroformix::getParamLimits(mle,dev=INTopt$dev)
+      lims = getParamLimits(mle,dev=INTopt$dev)
       int <- calcINT(mle, lims$lower, lims$upper, reltol = INTopt$reltol, maxEval = INTopt$maxEval, scale = lims$scale, verbose=FALSE) 
       return(int$loglik)
     }
@@ -76,7 +76,7 @@ calcTippet = function(tipIdx, mlefitHp, mlefitHd, niter=100, type="MLE", LRobs=N
       freqAll = c(freqAll,newA)
     }
     if(MLEopt$model$normalize) freqAll = freqAll/sum(freqAll)
-    Glist[[loc]] = euroformix::calcGjoint(freq=freqAll,nU=1,fst=fst[loc],refK=unlist(refDataLoc[refKnownIdxHd]),refR=unlist(refDataLoc[refRelIdx]),ibd=ibd)
+    Glist[[loc]] = calcGjoint(freq=freqAll,nU=1,fst=fst[loc],refK=unlist(refDataLoc[refKnownIdxHd]),refR=unlist(refDataLoc[refRelIdx]),ibd=ibd)
   } 
   #NOTICE THE KNOWN REFERENCE(S) GIVEN AS UNDER HD  
   if(verbose) print(paste0("Calculating ",niter," LR values...")) 

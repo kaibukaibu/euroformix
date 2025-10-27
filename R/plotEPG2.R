@@ -26,7 +26,7 @@ plotEPG2 = function(mixData,kit,refData=NULL,AT=NULL,ST=NULL,dyeYmax=TRUE,plotRe
  nrefs = length(refData)
  
  #GRAPHICAL SETUP BASED ON SELECTED KIT:
- kitinfo = euroformix::getKit(kit) #names(kitinfo)
+ kitinfo = getKit(kit) #names(kitinfo)
  if( is.na(kitinfo)[1] ) {
   print("The kit name was not recognized by getKit!")
   return()

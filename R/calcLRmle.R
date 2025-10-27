@@ -30,7 +30,7 @@ calcLRmle = function(mlefitHp, mlefitHd) {
   condHpIdx = which(mlefitHp$model$condOrder>0)
   condHdIdx = which(mlefitHd$model$condOrder>0)
   POIidx = condHp[setdiff(condHpIdx,condHdIdx)] #get ref-ind in hp but not in hd
-  log10LRupper = euroformix::calcLRupper(POIidx,mlefitHp) #obtain calculated LR. NOTE: NEED TO SEND hp fit AND position of POIidx
+  log10LRupper = calcLRupper(POIidx,mlefitHp) #obtain calculated LR. NOTE: NEED TO SEND hp fit AND position of POIidx
   
   LR <- .getSmallNumber(lr_logged) #obtain formatted LR
   LRadj <- .getSmallNumber(LRadj_logged)

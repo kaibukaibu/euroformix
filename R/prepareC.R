@@ -125,7 +125,7 @@ prepareC = function(nC,samples,popFreq, refData, condOrder, knownRef, kit,BWS,FW
   BWtoLong <- FWtoLong <- BWfromLong <- FWfromLong <- numeric() #backward/forward stutter info (to-allele)
   useDEG = FALSE #note: overrides input (useful for show topEPGplot)
   if(!is.null(kit)) { #always turn DEG on if kit name is provided
-    kitinfo = euroformix::getKit(kit) #get kit information
+    kitinfo = getKit(kit) #get kit information
     if(!is.null(kitinfo) || !is.na(kitinfo[1])) useDEG = TRUE #use degradation model
   }
   basepairLong <- numeric() #base pair information
@@ -169,6 +169,8 @@ prepareC = function(nC,samples,popFreq, refData, condOrder, knownRef, kit,BWS,FW
           if(any(is.na(check))) isSTRING = TRUE #stop("Data format not supported for Stutter model!")
         })        
       }
+    } else {
+      isSTRING = TRUE #set as string if no alleles in marker (only 99)
     }
     if(isSTRING) nStutterModels[markerIdx] = 0 #set number of stutter models to zero
 

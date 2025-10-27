@@ -13,14 +13,12 @@ Software for the interpretation of complex DNA profiles based on the information
 ## Installation
 Installation for Windows: Open R (v4.2 or newer) and write
 ```{r, eval = FALSE}
-install.packages('http://euroformix.com/sites/default/files/euroformix_4.2.4.zip',repos=NULL,type='win.binary')
+install.packages('https://github.com/oyvble/euroformix/releases/download/v4.2.5/euroformix_4.2.5.zip',repos=NULL,type='win.binary')
 install.packages(c('numDeriv','gWidgets2tcltk','cubature','XML','curl','plotly'))
 
 #Run EuroForMix (GUI)
 library(euroformix);efm() 
 ```
-
-Also possible to download zip file from https://github.com/oyvble/euroformix/releases (compiled for Windows only)
 
 Alternative installation directly from source through GitHub (requires R-tools):
 ```{r, eval = FALSE}
@@ -28,7 +26,13 @@ install.packages("remotes")
 remotes::install_github("oyvble/euroformix")
 ```
 
+
+Also possible to download zip file from
+www.euroformix.com/versions (compiled for Windows only)
+
+
 Info about suggested R-packages (all are optional to install):\
+- numDeriv: Used for obtaining numerical derivatives 
 - gWidgets2tcltk: Used for R GUI\
 - plotly: Used to vizualiaze DNA-profiles\
 - cubature: Used for numerical calculation of Bayes Factor\

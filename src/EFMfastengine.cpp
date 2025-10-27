@@ -78,7 +78,7 @@ class EFMmarker { //Each marker is treated separately
 	vector<double> m_ibd;
 	
 	//Include special contribution for conditional references: 
-	umat m_triAlleles; //A matrix specifying a 3rd allele. col1=Alleleposition and col2=contributor number. Implemented from v4.1.2
+	umat m_triAlleles; //A matrix specifying a 3rd allele. col1=Alleleposition and col2=contributor number. Implemented from v4.2.0
 	
 	//The constructor prepares the variables with necessary data (arguments in constructor)
 	public:

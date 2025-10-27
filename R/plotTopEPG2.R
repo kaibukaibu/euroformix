@@ -25,7 +25,7 @@ plotTopEPG2 <- function(MLEobj,DCobj=NULL,kit=NULL,dyeYmax=TRUE,plotRepsOnly=TRU
   
   #GRAPHICAL SETUP BASED ON SELECTED KIT:
   if(!is.null(MLEobj$model$kit)) kit = MLEobj$model$kit #NB: Use kit of degradation model if given (ignoring kit argument!)
-  kitinfo = euroformix::getKit(kit) #names(kitinfo)
+  kitinfo = getKit(kit) #names(kitinfo)
   if( is.na(kitinfo)[1] ) {
     print("The kit name was not recognized by getKit!")
     return(NULL)

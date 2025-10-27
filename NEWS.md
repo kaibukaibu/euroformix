@@ -15,6 +15,26 @@ Future version:
 
 - Faster Non-contributor tests by optimizing the calcMLE function (update genoWeights, skip preSearch, modelValid and DCcalc)
 
+EuroForMix v4.2.5 (Release date: 2025-27-10)
+=============================================
+- Added function calcCommonLR to calculate the LR of common unknowns between two mixtures:
+	- calcCommonLR takes two fitted model (returned from calcMLE), DC-object for each model is optional.
+
+- Fixes regarding using Relationhip under Hd.
+	- Thanks to Haicheng Li for finding the issues. 
+	1) The relationhip definition was mentioned under Hp in text report.
+	- Adding line efm_createReport-L95 to restrict output to Hd.
+	2) There was an use when using the automated model search function since Relationship was also specified under Hp.
+	- Modifying the ibd-input in contLikSearch:L104, "c(1,0,0)" instead of ibd.
+
+- Fixed warning happening in prepareC when having dropout marker for non-CE data(formatted as STRINGS).
+	- prepareC-L175: Dropout allele "99" is now set as a STRING (deactivates stutter models).
+	- The warning was triggered since the frequency allele names is used to recognize alleles (.getFragLength).
+	- There are no practical cause. Same output is occuring since it is a dropout allele "99".
+
+- Minor changes:
+	- Removing "euroformix::" in places where it is not needed.
+	- Removing C++11 flag in the Makevars.win file (allows newer RcppArmadillo version to be used).
 
 EuroForMix v4.2.4 (Release date: 2025-03-20)
 =============================================
